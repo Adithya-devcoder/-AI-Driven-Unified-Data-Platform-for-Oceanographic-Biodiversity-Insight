@@ -1,5 +1,6 @@
 import { useMemo, useState, useCallback } from "react";
 import Map from "react-map-gl/maplibre";
+import maplibregl from "maplibre-gl";
 import { DeckGLOverlay } from "./DeckGLOverlay";
 import { ScatterplotLayer, ColumnLayer } from "deck.gl";
 import type { LiveStation } from "@/data/stations";
@@ -60,6 +61,7 @@ export default function OceanMap({ stations, pitch, showHeatmap: _showHeatmap }:
         🗺 Risk Map
       </p>
       <Map
+        mapLib={maplibregl}
         initialViewState={{
           latitude: 15,
           longitude: 20,
@@ -69,6 +71,7 @@ export default function OceanMap({ stations, pitch, showHeatmap: _showHeatmap }:
         }}
         mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
         style={{ width: "100%", height: "100%" }}
+        renderWorldCopies={false}
       >
         <DeckGLOverlay layers={layers} />
       </Map>
