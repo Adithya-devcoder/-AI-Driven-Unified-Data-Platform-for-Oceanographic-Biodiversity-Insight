@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 216 50% 5%;
+    --foreground: 216 20% 90%;
+
+    --card: 216 40% 9%;
+    --card-foreground: 216 20% 90%;
+
+    --popover: 216 40% 9%;
+    --popover-foreground: 216 20% 90%;
+
+    --primary: 212 100% 65%;
+    --primary-foreground: 216 50% 5%;
+
+    --secondary: 233 100% 73%;
+    --secondary-foreground: 216 50% 5%;
+
+    --muted: 216 30% 15%;
+    --muted-foreground: 216 15% 55%;
+
+    --accent: 187 92% 55%;
+    --accent-foreground: 216 50% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 36 96% 64%;
+    --warning-foreground: 216 50% 5%;
+
+    --healthy: 142 71% 45%;
+    --healthy-foreground: 0 0% 100%;
+
+    --border: 216 25% 16%;
+    --input: 216 25% 16%;
+    --ring: 212 100% 65%;
+
+    --radius: 0.75rem;
+
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+
+    --sidebar-background: 216 40% 9%;
+    --sidebar-foreground: 216 20% 90%;
+    --sidebar-primary: 212 100% 65%;
+    --sidebar-primary-foreground: 216 50% 5%;
+    --sidebar-accent: 216 30% 15%;
+    --sidebar-accent-foreground: 216 20% 90%;
+    --sidebar-border: 216 25% 16%;
+    --sidebar-ring: 212 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* MapLibre overrides */
+.maplibregl-canvas {
+  outline: none;
+}
+.maplibregl-ctrl-bottom-left,
+.maplibregl-ctrl-bottom-right {
+  display: none !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+
+/* Recharts */
+.recharts-default-tooltip {
+  background: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 8px !important;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
