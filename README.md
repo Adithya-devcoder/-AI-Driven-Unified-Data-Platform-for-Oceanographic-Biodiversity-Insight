@@ -14,13 +14,10 @@ To work on this project locally, ensure you have Node.js and npm installed.
 # Step 1: Clone the repository
 git clone https://github.com/Adithya-devcoder/-AI-Driven-Unified-Data-Platform-for-Oceanographic-Biodiversity-Insight.git
 
-# Step 2: Navigate to the project directory
-cd Ocean
-
-# Step 3: Install dependencies
+# Step 2: Install dependencies
 npm i
 
-# Step 4: Start the development server
+# Step 3: Start the development server
 npm run dev
 ```
 
